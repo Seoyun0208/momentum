@@ -20,7 +20,7 @@ const pickedImgNum = getRandomNumber();
 
 function changeImgs(picked) {
 	body.appendChild(bgImg);
-	bgImg.src = `/img/${picked}.jpg`;
+	bgImg.src = `./img/${picked}.jpg`;
 }
 
 changeImgs(pickedImgNum);

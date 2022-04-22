@@ -29,5 +29,3 @@ if (savedUserName === null) {
 	loginForm.classList.add(HIDDEN_CLASSNAME);
 	greetings(savedUserName);
 }
-
-console.log(savedUserName);

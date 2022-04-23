@@ -1,6 +1,6 @@
 const quotes = [
 	{
-		quote: "그 사이에 많은 고통과 상처들을 이겨내고 날 갖춰. 부러질 바엔 휘고 말자는 나의 관념을 살려.",
+		quote: "그 사이에 많은 고통과 상처들을 이겨내고 날 갖춰.<br />부러질 바엔 휘고 말자는 나의 관념을 살려.",
 		from: "길, bts",
 	},
 	{
@@ -20,7 +20,7 @@ const quotes = [
 		from: "Lost, bts",
 	},
 	{
-		quote: "어두운 밤이 지나면 밝은 아침도 있듯이, 알아서. 내일이 오면 밝은 빛이 비추니, 걱정은 하지 말아줘.",
+		quote: "어두운 밤이 지나면 밝은 아침도 있듯이, 알아서.<br />내일이 오면 밝은 빛이 비추니, 걱정은 하지 말아줘.",
 		from: "Tomorrow, bts",
 	},
 	{
@@ -64,7 +64,7 @@ const quotes = [
 		from: "낙원, bts",
 	},
 	{
-		quote: "해가 뜨기 전 새벽이 가장 어두우니까. 먼 훗날의 넌 지금의 널 절대로 잊지마. 지금 니가 어디 서 있든 잠시 쉬어가는 것일 뿐, 포기하지마, 알잖아.",
+		quote: "해가 뜨기 전 새벽이 가장 어두우니까. 먼 훗날의 넌 지금의 널 절대로 잊지마.<br />지금 니가 어디 서 있든 잠시 쉬어가는 것일 뿐, 포기하지마, 알잖아.",
 		from: "Tomorrow, bts",
 	},
 	{
@@ -99,7 +99,7 @@ function getRandomNumber(min = 0, max = quotes.length) {
 const pickedQuoteNum = getRandomNumber();
 
 function changeQuote(picked) {
-	quote.innerText = quotes[picked].quote;
+	quote.innerHTML = quotes[picked].quote;
 	from.innerText = quotes[picked].from;
 }
 

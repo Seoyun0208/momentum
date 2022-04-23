@@ -1,9 +1,261 @@
+:root {
+	/* color */
+	--color-black: black;
+	--color-grey: grey;
+	--color-lightgrey: #eee;
+	--color-white: white;
+
+	/* size */
+	--size-super-large: 100px;
+	--size-large: 60px;
+	--size-medium: 38px;
+	--size-small: 30px;
+	--size-micro-small: 26px;
+
+	/* font */
+	--font-dokdo: "East Sea Dokdo";
+	--font-viga: "Viga";
+	--font-jua: "Jua";
+	--font-nanum: "Nanum Pen Script";
+}
+
+/* common */
+
+button {
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+button:hover {
+	transform: scale(1.3);
+}
+
+/* universe */
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: var(--font-viga), sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
+
+body {
+	height: 100vh;
+	text-align: center;
+	opacity: 1;
+}
+
+h1,
+h2,
+div,
+span,
+input,
+input::placeholder {
+	color: var(--color-lightgrey);
+}
+
+#container {
+	margin: 0 auto;
+	width: 90%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-width: 1400px;
+}
+
+/* Weather */
+
+#weather {
+	margin-top: 20px;
+	font-size: var(--size-small);
+}
+
+#weather span {
+	font-family: var(--font-dokdo);
+}
+
+/* Greetings */
 
 .hidden {
 	display: none;
+}
+
+#login-form input {
+	margin-bottom: 30px;
+	width: 20%;
+	height: 60px;
+	font-size: var(--size-large);
+	font-family: var(--font-dokdo), sans-serif;
+	background: transparent;
+	border: none;
+	border-bottom: 1.5px solid;
+	outline-style: none;
+	text-align: center;
+}
+
+input::placeholder {
+	text-align: center;
+	font-family: var(--font-jua), sans-serif;
+	font-size: var(--size-micro-small);
+	color: var(--color-lightgrey);
+}
+
+#greeting {
+	font-family: var(--font-jua), sans-serif;
+	font-size: var(--size-medium);
+	font-weight: 300;
+	margin: 20px 0;
+}
+
+/* Clock */
+
+#clock {
+	margin: 30px auto;
+	font-size: var(--size-super-large);
+}
+
+/* Content */
+
+#content {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	height: 0;
+	padding-bottom: min(calc(1500 / 2500 * 100%), 90vh);
+	position: relative;
+}
+
+/* TodoList */
+
+#todo-form input {
+	width: 80%;
+	max-width: 600px;
+	height: 60px;
+	font-size: var(--size-medium);
+	font-family: var(--font-nanum), sans-serif;
+	background: transparent;
+	border: none;
+	border-bottom: 3px double;
+	outline-style: none;
+	text-align: center;
+	margin: 20px 0;
+	padding: 10px 0;
+}
+
+#todo-list {
+	padding: 20px 0;
+	height: 45vh;
+	overflow-y: auto;
+	scroll-behavior: smooth;
+	list-style: none;
+	width: 90%;
+	margin: auto;
+}
+
+.todo {
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width: 90%;
+	align-items: center;
+	border-bottom: 1px dashed;
+}
+
+.todo span:first-child {
+	width: 90%;
+	text-align: left;
+	font-family: var(--font-nanum);
+	font-weight: 400;
+	font-size: var(--size-small);
+}
+
+.todo button:last-child {
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	border: none;
+	font-size: var(--size-micro-small);
+}
+
+/* Quotes */
+
+#quote {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+#quote span {
+	font-weight: 100;
+	text-align: right;
+	font-family: var(--font-dokdo), sans-serif;
+	font-size: var(--size-micro-small);
+}
+
+@media screen and (max-width: 1550px) {
+	:root {
+		/* size */
+		--size-super-large: 80px;
+		--size-large: 55px;
+		--size-medium: 32px;
+		--size-small: 26px;
+		--size-micro-small: 20px;
+	}
+
+	/* Greetings */
+
+	#login-form input {
+		width: 60%;
+	}
+
+	/* Content */
+
+	#content {
+		height: 70vh;
+	}
+
+	/* TodoList */
+
+	#todo-list {
+		height: 50vh;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	:root {
+		/* size */
+		--size-super-large: 50px;
+		--size-large: 40px;
+		--size-medium: 25px;
+		--size-small: 20px;
+		--size-micro-small: 16px;
+	}
+
+	/* Greetings */
+
+	#login-form input {
+		width: 60%;
+	}
+
+	/* Content */
+
+	#content {
+		height: 70vh;
+	}
+
+	/* TodoList */
+
+	#todo-list {
+		height: 50vh;
+	}
 }

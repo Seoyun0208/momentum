@@ -15,7 +15,7 @@ function onLoginSubmit(e) {
 
 function greetings(name) {
 	greeting.classList.remove(HIDDEN_CLASSNAME);
-	greeting.innerText = `반가워요! ${name}님`;
+	greeting.innerText = `반가워요! ${name}님 :)`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -29,3 +29,19 @@ if (savedUsername === null) {
 	loginForm.classList.add(HIDDEN_CLASSNAME);
 	greetings(savedUsername);
 }
+
+function onFocusIn(className) {
+	className.placeholder = "";
+}
+
+function onFocusOut(className) {
+	if (className === loginInput) {
+		className.placeholder = "이름을 입력하세요.";
+	} else if (className === todoInput) {
+		className.placeholder = "할 일을 입력한 후 엔터키를 누르세요.";
+	}
+}
+
+loginInput.addEventListener("focusin", () => onFocusIn(loginInput));
+
+loginInput.addEventListener("focusout", () => onFocusOut(loginInput));

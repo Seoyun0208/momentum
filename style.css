@@ -6,11 +6,12 @@
 	--color-white: white;
 
 	/* size */
-	--size-super-large: 100px;
-	--size-large: 60px;
-	--size-medium: 38px;
-	--size-small: 30px;
-	--size-micro-small: 26px;
+	--size-super-large: 10vmin;
+	--size-large: 6vmin;
+	--size-medium: 4vmin;
+	--size-small: 3vmin;
+	--size-micro-small: 2.5vmin;
+	--size-placeholder: 2vmin;
 
 	/* font */
 	--font-dokdo: "East Sea Dokdo";
@@ -61,11 +62,20 @@ input::placeholder {
 
 #container {
 	margin: 0 auto;
-	width: 90%;
+	width: 90vw;
+	max-width: 1400px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	max-width: 1400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+ul {
+	list-style: none;
+	margin: auto;
 }
 
 /* Weather */
@@ -85,23 +95,25 @@ input::placeholder {
 	display: none;
 }
 
+#login-form {
+	height: 10vh;
+}
+
 #login-form input {
-	margin-bottom: 30px;
-	width: 20%;
-	height: 60px;
+	width: 15vw;
 	font-size: var(--size-large);
 	font-family: var(--font-dokdo), sans-serif;
-	background: transparent;
 	border: none;
 	border-bottom: 1.5px solid;
 	outline-style: none;
 	text-align: center;
+	background: transparent;
 }
 
 input::placeholder {
 	text-align: center;
 	font-family: var(--font-jua), sans-serif;
-	font-size: var(--size-micro-small);
+	font-size: var(--size-placeholder);
 	color: var(--color-lightgrey);
 }
 
@@ -109,33 +121,32 @@ input::placeholder {
 	font-family: var(--font-jua), sans-serif;
 	font-size: var(--size-medium);
 	font-weight: 300;
-	margin: 20px 0;
+	margin-bottom: 10px;
 }
 
 /* Clock */
 
 #clock {
-	margin: 30px auto;
+	margin-top: 30px;
+	margin: auto;
 	font-size: var(--size-super-large);
 }
 
 /* Content */
 
 #content {
-	width: 100%;
+	width: 80vw;
 	max-width: 1200px;
 	margin: auto;
-	height: 0;
-	padding-bottom: min(calc(1500 / 2500 * 100%), 90vh);
-	position: relative;
+	height: 100%;
 }
 
 /* TodoList */
 
 #todo-form input {
-	width: 80%;
+	width: 30vw;
 	max-width: 600px;
-	height: 60px;
+	height: 5vh;
 	font-size: var(--size-medium);
 	font-family: var(--font-nanum), sans-serif;
 	background: transparent;
@@ -148,36 +159,29 @@ input::placeholder {
 }
 
 #todo-list {
-	padding: 20px 0;
-	height: 45vh;
-	overflow-y: auto;
+	width: 85%;
+	height: 35vh;
+	padding: 20px;
+	overflow-y: scroll;
 	scroll-behavior: smooth;
-	list-style: none;
-	width: 90%;
-	margin: auto;
 }
 
 .todo {
-	padding-bottom: 10px;
-	display: flex;
-	justify-content: center;
-	margin: auto;
-	width: 90%;
-	align-items: center;
 	border-bottom: 1px dashed;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
 }
 
 .todo span:first-child {
-	width: 90%;
 	text-align: left;
 	font-family: var(--font-nanum);
 	font-weight: 400;
-	font-size: var(--size-small);
+	font-size: var(--size-micro-small);
 }
 
 .todo button:last-child {
-	width: 30px;
-	height: 30px;
+	height: 2.5vh;
 	background: transparent;
 	border: none;
 	font-size: var(--size-micro-small);
@@ -186,13 +190,12 @@ input::placeholder {
 /* Quotes */
 
 #quote {
+	width: 85%;
+	height: 100%;
 	padding: 10px;
+	margin: 30px auto 10px auto;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
 }
 
 #quote span {
@@ -202,60 +205,6 @@ input::placeholder {
 	font-size: var(--size-micro-small);
 }
 
-@media screen and (max-width: 1550px) {
-	:root {
-		/* size */
-		--size-super-large: 80px;
-		--size-large: 55px;
-		--size-medium: 32px;
-		--size-small: 26px;
-		--size-micro-small: 20px;
-	}
-
-	/* Greetings */
-
-	#login-form input {
-		width: 60%;
-	}
-
-	/* Content */
-
-	#content {
-		height: 70vh;
-	}
-
-	/* TodoList */
-
-	#todo-list {
-		height: 50vh;
-	}
-}
-
-@media screen and (max-width: 1100px) {
-	:root {
-		/* size */
-		--size-super-large: 50px;
-		--size-large: 40px;
-		--size-medium: 25px;
-		--size-small: 20px;
-		--size-micro-small: 16px;
-	}
-
-	/* Greetings */
-
-	#login-form input {
-		width: 60%;
-	}
-
-	/* Content */
-
-	#content {
-		height: 70vh;
-	}
-
-	/* TodoList */
-
-	#todo-list {
-		height: 50vh;
-	}
+#quote span:last-child {
+	font-size: calc(var(--size-micro-small) / 1.2);
 }
